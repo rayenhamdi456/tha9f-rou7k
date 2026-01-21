@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ثقفتاك  متلعبناش</title>
+
+  <!-- ربط CSS خارجي -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- واجهة اختيار الموضوع -->
+  <div id="home">
+    <h2>اختر الموضوع الذي تريد اللعب فيه</h2>
+    <div class="btn-group">
+      <button onclick="selectTopic('football')">كرة القدم</button>
+      <button onclick="selectTopic('movies')">الأفلام</button>
+      <button onclick="selectTopic('famous')">المشاهير</button>
+      <button onclick="selectTopic('math')">الرياضيات</button>
+      <button onclick="selectTopic('geo')">الجغرافيا</button>
+      <button onclick="selectTopic('history')">التاريخ</button>
+      <button onclick="selectTopic('islam')">الدين الإسلامي</button>
+      <button onclick="selectTopic('mathal')">الأمثال التونسية</button>
+    </div>
+  </div>
+
+  <!-- واجهة اللعبة -->
+  <div id="game" style="display:none;">
+    <h3 id="question"></h3>
+
+    <input type="text" id="answer" placeholder="اكتب إجابتك هنا">
+
+    <div class="btn-group">
+      <button onclick="checkAnswer()">إرسال</button>
+      <button onclick="goHome()">العودة للموضوعات</button>
+    </div>
+
+    <p id="result"></p>
+  </div>
+
+  <!-- ملفات الأسئلة لكل موضوع -->
+  <script src="football.js"></script>
+  <script src="movies.js"></script>
+  <script src="famous.js"></script>
+  <script src="math.js"></script>
+  <script src="geo.js"></script>
+  <script src="history.js"></script>
+  <script src="islam.js"></script>
+  <script src="mathal.js"></script>
+
+  <!-- سكريبت اللعبة -->
+  <script src="script.js"></script>
+
+</body>
+</html>

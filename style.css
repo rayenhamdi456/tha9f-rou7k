@@ -1,0 +1,160 @@
+/* ---------- إعدادات عامة ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-attachment: fixed;
+  animation: bgAnimation 20s ease infinite;
+  overflow: hidden;
+}
+
+/* ---------- أنيميشن الخلفية ---------- */
+@keyframes bgAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- المربع الرئيسي ---------- */
+#home, #game {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 40px;
+  width: 95%;
+  max-width: 650px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 1s ease forwards;
+}
+
+/* ---------- أنيميشن fadeIn ---------- */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- العناوين ---------- */
+h2, h3 {
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ---------- زر الموضوعات ---------- */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+button {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  border: none;
+  padding: 14px 25px;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+/* ---------- أنيميشن موجة على الزر عند الضغط ---------- */
+button:active::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 300%;
+  top: -100%;
+  left: -10%;
+  background: rgba(255,255,255,0.3);
+  transform: rotate(45deg);
+  animation: ripple 0.6s ease;
+}
+
+@keyframes ripple {
+  0% { top: -100%; opacity: 1; }
+  100% { top: 200%; opacity: 0; }
+}
+
+/* ---------- input لإدخال الإجابة ---------- */
+input[type="text"] {
+  width: 90%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #764ba2;
+  margin-top: 20px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #ff758c;
+  box-shadow: 0 0 10px rgba(255,117,140,0.5);
+}
+
+/* ---------- عرض النتيجة ---------- */
+#result {
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 700;
+  min-height: 30px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+}
+
+/* ---------- ترتيب عناصر اللعبة ---------- */
+#game .btn-group {
+  margin-top: 25px;
+}
+
+/* ---------- أسئلة واضحة ---------- */
+#question {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ---------- إضافة ظل خلف المربع ---------- */
+#home, #game {
+  border: 2px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(15px);
+}
+
+/* ---------- أصغر شاشات ---------- */
+@media (max-width: 480px) {
+  input[type="text"] {
+    width: 95%;
+    padding: 12px;
+  }
+  button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+  #question {
+    font-size: 20px;
+  }
+}
